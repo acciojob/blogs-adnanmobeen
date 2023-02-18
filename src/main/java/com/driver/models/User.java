@@ -16,15 +16,17 @@ public class User {
 
     private String password;
 
-    private String firstName = "test";
+    private String firstName;
 
-    private String lastName = "test";
+    private String lastName ;
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
     List<Blog>blogList;
 
     public User() {
 
+        this.firstName = "test";
+        this.lastName = "test";
     }
 
     public User(String userName, String password) {
