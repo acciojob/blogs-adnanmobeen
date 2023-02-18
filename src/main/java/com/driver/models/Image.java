@@ -4,14 +4,11 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "Image")
-public class Image {
-
+public class Image{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
-    private  String description;
-
+    private String description;
     private String dimensions;
 
     @ManyToOne
@@ -21,7 +18,7 @@ public class Image {
     public Image() {
     }
 
-    public Image(Blog blog ,String description, String dimensions) {
+    public Image(Blog blog, String description, String dimensions) {
         this.description = description;
         this.dimensions = dimensions;
         this.blog = blog;
