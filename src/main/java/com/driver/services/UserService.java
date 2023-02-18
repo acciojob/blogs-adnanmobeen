@@ -16,13 +16,33 @@ public class UserService {
     public User createUser(String username, String password){
 
 
+
+        User user = new User();
+        user.setFirstName("test");
+        user.setLastName("test");
+        user.setUserName(username);
+        user.setPassword(password);
+        userRepository3.save(user);
+        return user;
+
     }
 
     public void deleteUser(int userId){
 
+        userRepository3.deleteById(userId);
+
+
     }
 
     public User updateUser(Integer id, String password){
+
+        User newUser = userRepository3.findById(id).get();
+        newUser.setPassword(password);
+
+        userRepository3.save(newUser);
+
+        return newUser;
+
 
     }
 }
