@@ -17,11 +17,11 @@ public class UserService {
 
 
 
-        User user = new User();
+        User user = new User(username,password);
        // user.setFirstName("test");
        // user.setLastName("test");
-        user.setUserName(username);
-        user.setPassword(password);
+       // user.setUserName(username);
+      //  user.setPassword(password);
         userRepository3.save(user);
         return user;
 
