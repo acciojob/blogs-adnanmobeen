@@ -27,7 +27,6 @@ public class Blog {
     private User user;
 
     @OneToMany(mappedBy = "blog",cascade = CascadeType.ALL)
-    @JoinColumn
     List<Image>imageList;
 
     public Blog() {
