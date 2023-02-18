@@ -19,13 +19,16 @@ public class ImageController {
     public ResponseEntity<String> addImage(@PathVariable int blogId, @RequestParam String description, @RequestParam String dimensions) {
         // Add image into the give blog
 
-        Image image = imageService.addImage(blogId,description,dimensions);
+        imageService.addImage(blogId,description,dimensions);
         return new ResponseEntity<>("Added image successfully", HttpStatus.OK);
     }
 
     @GetMapping("/countImagesInScreen/{id}/{screenDimensions}")
     public ResponseEntity<Integer> countImagesInScreen(@PathVariable int id, @PathVariable String screenDimensions){
-        return new ResponseEntity<>(imageService.countImagesInScreen(id,screenDimensions), HttpStatus.OK);
+
+        int count = imageService.countImagesInScreen(id,screenDimensions);
+
+        return new ResponseEntity<>(count, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")

@@ -24,7 +24,17 @@ public class User {
     List<Blog>blogList = new ArrayList<>();
 
     public User() {
+        this.firstName = "text";
+        this.lastName = "text";
     }
+
+    public User(String userName, String password) {
+        this.userName = userName;
+        this.password = password;
+        this.firstName = "text";
+        this.lastName = "text";
+    }
+
 
     public int getId() {
         return id;

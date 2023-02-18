@@ -20,7 +20,7 @@ public class BlogController {
     public ResponseEntity createBlog(@RequestParam Integer userId ,
                                      @RequestParam String title,
                                      @RequestParam String content) {
-        Blog blog = blogService.createAndReturnBlog(userId,title,content);
+        blogService.createAndReturnBlog(userId,title,content);
         // Create a blog and add it under given user
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
