@@ -16,25 +16,31 @@ public class User {
 
     private String password;
 
-    private String firstName;
+    private String firstName = "text";
 
-    private String lastName;
+    private String lastName = "text";
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
-    List<Blog>blogList = new ArrayList<>();
+    List<Blog>blogList;
 
     public User() {
-        this.firstName = "text";
-        this.lastName = "text";
+
     }
 
     public User(String userName, String password) {
         this.userName = userName;
         this.password = password;
-        this.firstName = "text";
-        this.lastName = "text";
+
     }
 
+    public User(int id, String userName, String password, String firstName, String lastName, List<Blog> blogList) {
+        this.id = id;
+        this.userName = userName;
+        this.password = password;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.blogList = blogList;
+    }
 
     public int getId() {
         return id;
