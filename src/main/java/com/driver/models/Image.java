@@ -3,7 +3,7 @@ package com.driver.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "image")
+@Table(name = "Image")
 public class Image {
 
     @Id
@@ -21,7 +21,7 @@ public class Image {
     public Image() {
     }
 
-    public Image(String description, String dimensions, Blog blog) {
+    public Image(Blog blog ,String description, String dimensions) {
         this.description = description;
         this.dimensions = dimensions;
         this.blog = blog;

@@ -8,7 +8,7 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table(name = "blog")
+@Table(name = "Blog")
 public class Blog {
 
     @Id
@@ -27,12 +27,13 @@ public class Blog {
     private User user;
 
     @OneToMany(mappedBy = "blog",cascade = CascadeType.ALL)
+    @JoinColumn
     List<Image>imageList;
 
     public Blog() {
     }
 
-    public Blog(String title, String content, User user) {
+    public Blog(User user,String title, String content) {
         this.title = title;
         this.content = content;
         this.user = user;

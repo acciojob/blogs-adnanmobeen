@@ -25,7 +25,7 @@ public class BlogService {
         //create a blog at the current time
         User user = userRepository1.findById(userId).get();
 
-        Blog blog = new Blog(title,content,user);
+        Blog blog = new Blog( user, title,content);
        // blog.setContent(content);
        // blog.setTitle(title);
       //  blog.setUser(user);

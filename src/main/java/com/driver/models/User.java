@@ -16,11 +16,12 @@ public class User {
 
     private String password;
 
-    private String firstName = "text";
+    private String firstName = "test";
 
-    private String lastName = "text";
+    private String lastName = "test";
 
     @OneToMany(mappedBy = "user",cascade = CascadeType.ALL)
+    @JoinColumn
     List<Blog>blogList;
 
     public User() {

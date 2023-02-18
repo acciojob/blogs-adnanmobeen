@@ -36,12 +36,14 @@ public class UserService {
 
     public User updateUser(Integer id, String password){
 
-        User newUser = userRepository3.findById(id).get();
-        newUser.setPassword(password);
+        User user;
 
-        userRepository3.save(newUser);
+        user = userRepository3.findById(id).get();
+        user.setPassword(password);
 
-        return newUser;
+        userRepository3.save(user);
+
+        return user;
 
 
     }
